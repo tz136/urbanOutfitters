@@ -10,16 +10,22 @@ export class ContentDetailsComponent implements OnInit {
 
   lat = null;
   lng = null;
+
   iconUrl = null;
   description = null;
   temperature = null;
   windSpeed = null;
   humidity = null;
 
+  location = null;
+
+  loading = true;
+
   constructor(private common: CommonService, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.lat = params['lat'];
       this.lng = params['lng'];
+      this.location = localStorage.getItem('location');
       this.getWeather();
     });
   }
@@ -27,12 +33,17 @@ export class ContentDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
+  //call get weather api
   getWeather() {
     this.common.getWeathers(this.lat, this.lng).subscribe((res: any) => {
       this.getWeatherDetails(res);
+      this.loading = false;
+    }, err => {
+      this.common.handlerError();
     });
   }
 
+  //get weather details
   getWeatherDetails(info: any) {
     console.log(info);
     this.description = info.weather[0].description;

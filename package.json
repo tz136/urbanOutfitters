@@ -25,6 +25,7 @@
     "font-awesome": "^4.7.0",
     "moment": "^2.22.2",
     "ngx-google-places-autocomplete": "^2.0.1",
+    "ngx-loading": "^2.0.1",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },

@@ -1,23 +1,8 @@
-<div class="container containerMain" align="center">
+<div *ngIf="!loading" class="container containerMain" align="center">
+  <p class="titleText">Weather of {{location}} </p>
   <div class="box">
-    <div class="boxHeader">
-      <p class="headerText">Weather of Your Location </p>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="detailBox">
-          <img *ngIf="iconUrl" [src]="iconUrl" style="width:150px;height:169px;padding-top:20px">
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="detailBox">
-          <p><span class="detailText">Description:</span>{{description}}</p>
-          <p><span class="detailText">Temperature:</span>{{temperature}}</p>
-          <p><span class="detailText">WindSpeed:</span>{{windSpeed}}</p>
-          <p><span class="detailText">Humidity:</span>{{humidity}}</p>
-        </div>
-      </div>
-    </div>
+    dasdad
   </div>
   <button type="button" class="btn btn-warning backButton" routerLink="/">Home Page</button>
 </div>
+<ngx-loading [show]="loading"></ngx-loading>

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   lat = null;
   lng = null;
+  location = null;
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -16,13 +17,16 @@ export class HomeComponent implements OnInit {
 
   //get info from autocomplete;
   handleAddressChange(address) {
+    console.log(address);
     this.lat = address.geometry.location.lat();
     this.lng = address.geometry.location.lng();
+    this.location = address.formatted_address;
   }
 
   //go to weather details page;
   goContentDetail() {
     let url = this.lat + '/' + this.lng;
+    localStorage.setItem('location', this.location);
     this.router.navigate(['content-details/' + url]);
   }
 
