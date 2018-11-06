@@ -35,7 +35,7 @@ describe('ContentDetailsComponent', () => {
 
   it('Test get weather icon', () => {
     component.getIcon(apiResponce.weather[0].icon);
-    const url = component.iconUrl
+    const url = component.iconUrl;
     expect(url).toBe("http://localhost:4200/assets/icon/04n.png");
 
 
