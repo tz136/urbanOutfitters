@@ -1,0 +1,26 @@
+.image {
+  margin-top: 3rem
+  // position: relative;
+  // margin: auto;
+  // left: 0;
+  // right: 0;
+  // top: 0;
+  // bottom: 0;
+}
+
+.backButton{
+  margin-top: auto;
+  color: whitesmoke;
+  font-weight: bold;
+  margin-top: 15px
+}
+
+@media only screen and (max-width: 500px) {
+  .image {
+    width: 350px;
+    height: 234px;
+    margin-top: 10rem
+  }
+}
+
+

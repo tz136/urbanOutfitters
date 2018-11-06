@@ -1,0 +1,29 @@
+.inputBox {
+  margin-top: 3rem;
+  padding-left: 20%;
+  padding-right: 20%
+}
+
+.searchButton {
+  color: whitesmoke;
+  font-weight: bold
+}
+
+.logoImg {
+  margin-top: 8rem;
+  width: 200px;
+  height: 200px;
+}
+
+
+@media only screen and (max-width: 500px) {
+  .inputBox {
+    margin-top: 2rem;
+    padding: 0 0 0 0;
+  }
+
+  .logoImg {
+    width: 150px;
+    height: 150px;
+  }
+}
