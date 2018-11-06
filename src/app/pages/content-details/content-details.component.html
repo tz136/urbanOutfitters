@@ -1,8 +1,23 @@
 <div *ngIf="!loading" class="container containerMain" align="center">
   <p class="titleText">Weather of {{location}} </p>
+  <img [src]="iconUrl">
   <div class="box">
-    dasdad
+    <div class="row">
+      <div class="col-6" style="margin-top: 5px">
+        <p class="detailText">Description:</p>
+        <p class="detailText">Temperature:</p>
+        <p class="detailText">WindSpeed:</p>
+        <p class="detailText">Humidity:</p>
+      </div>
+      <div class="col-6" style="margin-top: 5px">
+        <p class="detailContent">{{description}}</p>
+        <p class="detailContent">{{temperature}} °F</p>
+        <p class="detailContent">{{windSpeed}} mph</p>
+        <p class="detailContent">{{humidity}} %</p>
+      </div>
+    </div>
   </div>
+  <br>
   <button type="button" class="btn btn-warning backButton" routerLink="/">Home Page</button>
 </div>
 <ngx-loading [show]="loading"></ngx-loading>

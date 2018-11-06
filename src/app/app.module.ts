@@ -34,7 +34,7 @@ import { ContentDetailsComponent } from './pages/content-details/content-details
     FormsModule,
     NgxLoadingModule.forRoot({
       animationType: ngxLoadingAnimationTypes.wanderingCubes,
-      backdropBackgroundColour: 'rgba(0,0,0,0.5)',
+      backdropBackgroundColour: 'rgba(0,0,0,0.1)',
       backdropBorderRadius: '4px',
       primaryColour: '#432c85',
       secondaryColour: '#432c85',

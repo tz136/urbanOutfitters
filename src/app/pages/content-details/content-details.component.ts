@@ -37,12 +37,16 @@ export class ContentDetailsComponent implements OnInit {
   getWeather() {
     this.common.getWeathers(this.lat, this.lng).subscribe((res: any) => {
       this.getWeatherDetails(res);
+      this.getIcon(res);
       this.loading = false;
     }, err => {
       this.common.handlerError();
     });
   }
-
+  //get weather icon
+  getIcon(info: any) {
+    this.iconUrl = '/assets/icon/' + info.weather[0].icon + '.png';
+  }
   //get weather details
   getWeatherDetails(info: any) {
     console.log(info);
@@ -50,6 +54,7 @@ export class ContentDetailsComponent implements OnInit {
     this.temperature = info.main.temp;
     this.windSpeed = info.wind.speed;
     this.humidity = info.main.humidity;
+    this.iconUrl = '/assets/icon/' + info.weather[0].icon + '.png';
   }
 
 }
