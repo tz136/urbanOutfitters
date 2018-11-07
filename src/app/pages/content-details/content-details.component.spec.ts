@@ -59,7 +59,7 @@ describe("ContentDetailsComponent", () => {
       component.humidity,
       component.windSpeed
     ];
-    const result = ["overcast clouds", 289.5, 89, 7.31];
+    const result = ["overcast clouds", "61", 89, 7.31];
     expect(newWeather).toEqual(result);
   });
 });
