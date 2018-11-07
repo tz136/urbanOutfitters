@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { CommonService } from "../../services/common.service";
-import { Router, ActivatedRoute, Params } from "@angular/router";
+import { ActivatedRoute, Params } from "@angular/router";
+import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 @Component({
   selector: "app-content-details",
   templateUrl: "./content-details.component.html",
@@ -20,9 +21,12 @@ export class ContentDetailsComponent implements OnInit {
 
   loading = true;
 
+  closeResult: string;
+
   constructor(
     private common: CommonService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private modalService: NgbModal
   ) {
     this.activatedRoute.params.subscribe((params: Params) => {
       this.lat = params["lat"];
@@ -59,5 +63,29 @@ export class ContentDetailsComponent implements OnInit {
     this.windSpeed = info.wind.speed;
     this.humidity = info.main.humidity;
     this.iconUrl = "/assets/icon/" + info.weather[0].icon + ".png";
+  }
+
+  //open modeal
+  open(content) {
+    this.modalService
+      .open(content, { ariaLabelledBy: "modal-basic-title" })
+      .result.then(
+        result => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        reason => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return "by pressing ESC";
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return "by clicking on a backdrop";
+    } else {
+      return `with: ${reason}`;
+    }
   }
 }
