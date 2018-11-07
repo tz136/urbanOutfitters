@@ -4,9 +4,8 @@
   </div>
   <!-- autocomplete input bar -->
   <div class="input-group mb-3 inputBox">
-    <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"
-      type="text" class="form-control" placeholder="Please enter the location" aria-label="Please enter the location"
-      style=" background-color : rgba(0, 0, 0, 0.5);color: whitesmoke">
+    <input ngx-google-places-autocomplete #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" type="text"
+      class="form-control" placeholder="Please enter the location" aria-label="Please enter the location" style=" background-color : rgba(0, 0, 0, 0.5);color: whitesmoke">
     <div class="input-group-append">
       <button class="btn btn-danger searchButton" type="button" [disabled]="lat===null" (click)="goContentDetail()">Search</button>
     </div>

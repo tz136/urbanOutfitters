@@ -27,9 +27,12 @@ export class ContentDetailsComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private modalService: NgbModal
   ) {
+    //get parameter from routes(url);
     this.activatedRoute.params.subscribe((params: Params) => {
       this.lat = parseFloat(params["lat"]);
       this.lng = parseFloat(params["lng"]);
+
+      //get data using localstorage;
       this.location = localStorage.getItem("location");
       this.getWeather();
     });

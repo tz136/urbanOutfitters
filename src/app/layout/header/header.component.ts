@@ -1,21 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import * as moment from 'moment';
+import { Component, OnInit } from "@angular/core";
+import * as moment from "moment";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit {
-
   day = null;
   localTime = null;
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
-    //get and formet date;
-    this.day = moment().format('dddd');
-    this.localTime = moment().format('MMMM Do YYYY');
+    //get and current date and formet date;
+    this.day = moment().format("dddd");
+    this.localTime = moment().format("MMMM Do YYYY");
   }
-
 }
