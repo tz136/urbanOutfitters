@@ -10,7 +10,6 @@ import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 export class ContentDetailsComponent implements OnInit {
   lat = null;
   lng = null;
-
   iconUrl = null;
   description = null;
   temperature = null;
@@ -29,8 +28,8 @@ export class ContentDetailsComponent implements OnInit {
     private modalService: NgbModal
   ) {
     this.activatedRoute.params.subscribe((params: Params) => {
-      this.lat = params["lat"];
-      this.lng = params["lng"];
+      this.lat = parseFloat(params["lat"]);
+      this.lng = parseFloat(params["lng"]);
       this.location = localStorage.getItem("location");
       this.getWeather();
     });

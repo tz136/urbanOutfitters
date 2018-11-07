@@ -11,10 +11,9 @@
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   opacity: 1;
-  background: linear-gradient(to left, #00FF9B, #5f84fb);
+  background: linear-gradient(to left, #00ff9b, #5f84fb);
   transition: opacity 300ms linear;
   color: whitesmoke;
-
 }
 
 .box:hover {
@@ -46,7 +45,12 @@
   margin-top: 3rem;
   color: whitesmoke;
   font-weight: bold;
-  margin-top: 15px
+  margin-top: 15px;
+}
+
+agm-map {
+  width: 100%;
+  height: 200px;
 }
 
 @media only screen and (max-width: 500px) {
@@ -55,7 +59,7 @@
   }
 
   .box {
-    width: 100%
+    width: 100%;
   }
 
   .backButton {
@@ -70,5 +74,4 @@
   .detailContent {
     font-size: 15px;
   }
-
 }

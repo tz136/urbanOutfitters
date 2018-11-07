@@ -34,7 +34,7 @@ import { ContentDetailsComponent } from "./pages/content-details/content-details
     GooglePlaceModule,
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: "YOUR_KEY"
+      apiKey: "AIzaSyDRCKp-d8upp3zaad_VMfZ8D-fZhsmqsQs"
     }),
     NgbModule.forRoot()
   ],
