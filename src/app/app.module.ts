@@ -8,6 +8,8 @@ import { FormsModule } from "@angular/forms";
 //Third party package
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { AgmCoreModule } from "@agm/core";
+
 //cutomized components
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./layout/header/header.component";
@@ -31,6 +33,9 @@ import { ContentDetailsComponent } from "./pages/content-details/content-details
     HttpClientModule,
     GooglePlaceModule,
     FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: "YOUR_KEY"
+    }),
     NgbModule.forRoot()
   ],
   providers: [],
